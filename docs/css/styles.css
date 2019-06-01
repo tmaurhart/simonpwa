@@ -131,3 +131,8 @@ button#startGame:hover, button#startGame:focus, button#startGame:active {
 #incorrect {
     background: red;
 }
+
+footer {
+    padding: 5px 10px;
+    text-align: center;
+}
