@@ -37,6 +37,8 @@
 
     setLevel(0);
 
+    var sounds = [new Audio('audio/simonSound1.mp3'), new Audio('audio/simonSound2.mp3'), new Audio('audio/simonSound3.mp3'), new Audio('audio/simonSound4.mp3')];
+
     // setup buttons
     var selectedIdx = -1;
     var tmr = null;
@@ -55,9 +57,9 @@
                 // check input
                 if (clickedItem === expectedItem) {
                     console.log('CORRECT');
+                    sounds[clickedItem].play();
                 } else {
                     console.log('INCORRECT pressed ' + clickedItem + ' expected ' + expectedItem);
-                    //document.getElementById('incorrect').style.display = 'block';
                     setVisibility('incorrect', true);
                     removeClass('startGame', 'readonly');
                 }
@@ -91,7 +93,7 @@
         console.log(level);
         var arr = [];
         if (level == 0) {
-            levels[level] = arr.push(Math.floor(Math.random()*4));
+            //levels[level] = arr.push(Math.floor(Math.random()*4));
             //console.log("arr = " + arr[0]);
         } else {
             arr = levels[level - 1];
