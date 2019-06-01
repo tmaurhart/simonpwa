@@ -1,6 +1,6 @@
 {
-    "name": "Simons Game",
-    "short_name": "Simon PWA",
+    "name": "Simon Says",
+    "short_name": "Simon Says",
     "display": "standalone",
     "start_url": ".",
     "scope": "/simonpwa/",
