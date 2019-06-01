@@ -3,7 +3,7 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(swCache)
             .then(cache => cache.addAll([
-                '/',
+                '/simonpwa/',
                 'index.html',
                 'css/styles.css',
                 'app.js',
