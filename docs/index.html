@@ -35,13 +35,13 @@
         <h1>Simons Says</h1>
 
         <section id="gameBoard">
+            <div class="gameLevel"><span id="level"></span></div>
             <div class="alert" id="correct">Perfect!</div>
-            <div class="alert" id="incorrect">Wrong!</div>
+            <div class="alert" id="incorrect">Congratulations you did <span id="levelIfo"></span> turns!</div>
             <button id="button-0" class="btnClick btnYellow"></button>
             <button id="button-1" class="btnClick btnRed"></button>
             <button id="button-2" class="btnClick btnBlue"></button>
             <button id="button-3" class="btnClick btnGreen"></button>
-            <div id="gameLevel"><span id="level"></span></div>
         </section>
 
         <button id="startGame">Start Game</button>
@@ -52,7 +52,7 @@
         </div>
 
     </main>
-    <footer>&copy; Thomas Maurhart</footer>
+    <footer>&copy; <span id="footerYear"></span> by Thomas Maurhart</footer>
 
     <script async src="app.js"></script>
     <script>

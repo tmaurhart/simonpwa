@@ -6,7 +6,6 @@
             .catch(console.error);
     }
     
-
     var loader = document.getElementById('loader');
     setTimeout(function () {
         loader.firstChild.classList.add('rotating');
@@ -17,6 +16,10 @@
     setTimeout(function () {
         loader.remove();
     }, 3400);
+
+    var d = new Date();
+    var n = d.getFullYear();
+    document.getElementById('footerYear').innerHTML = n;
 
     // setup levels
     /*var levels = [
@@ -54,13 +57,19 @@
                     console.log('CORRECT');
                 } else {
                     console.log('INCORRECT pressed ' + clickedItem + ' expected ' + expectedItem);
-                    document.getElementById('incorrect').style.display = 'block';
+                    //document.getElementById('incorrect').style.display = 'block';
+                    setVisibility('incorrect', true);
+                    removeClass('startGame', 'readonly');
                 }
                 selectedIdx++;
                 if (selectedIdx === selectedLevel.length) {
                     watchInput = false;
                     setLevel(levelIdx + 1);
-                    document.getElementById('correct').style.display = 'block';
+                    setVisibility('correct', true);
+                    //removeClass('startGame', 'readonly');
+                    window.setTimeout(function () {
+                        start();
+                    }, 3000);
                 }
             }
         });
@@ -79,9 +88,22 @@
     }
 
     function setLevel(level) {
+        console.log(level);
+        var arr = [];
+        if (level == 0) {
+            //levels[level] = arr.push(Math.floor(Math.random()*4));
+            console.log("arr = " + arr[0]);
+        } else {
+            arr = levels[level - 1];
+            arr.push(Math.floor(Math.random() * 4));
+            levels.push(arr);
+            console.log("was anderes" + levels[level]);
+        }
+
         levelIdx = level;
         selectedLevel = levels[levelIdx];
         document.getElementById('level').innerHTML = levelIdx;
+        document.getElementById('levelIfo').innerHTML = levelIdx;
     }
 
     function start() {
@@ -89,12 +111,12 @@
         selectedIdx = -1;
         setVisibility('correct', false);
         setVisibility('incorrect', false);
+        addClass('startGame', 'readonly');
         nextItem();
     }
 
     function setVisibility(id, visible) {
         document.getElementById(id).style.display = visible ? 'block' : 'none';
-        //console.log(id);
     }
 
     function addClass(elem, cls) {
