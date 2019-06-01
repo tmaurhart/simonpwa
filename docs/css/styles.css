@@ -145,58 +145,81 @@ footer {
 }
 
 #loader {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  transition: all 2000ms ease-in-out;
-  opacity: 1;
-  background: linear-gradient(to right, #fff, #e2e2e2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    transition: all 2000ms ease-in-out;
+    opacity: 1;
+    background: linear-gradient(to right, #fff, #e2e2e2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #loader.is-hidden {
-  opacity: 0;
+    opacity: 0;
 }
 
 #loader img {
-  transition: -webkit-transform 0.8s ease-in-out;
-  transition: transform 0.8s ease-in-out;
-  transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-  opacity: 1;
+    transition: -webkit-transform 0.8s ease-in-out;
+    transition: transform 0.8s ease-in-out;
+    transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    opacity: 1;
 }
 
 @-webkit-keyframes rotating {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
 
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes rotating {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
+    from {
+        -webkit-transform: rotate(0deg);
+       transform: rotate(0deg);
+    }
 
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 
 .rotating {
-  -webkit-animation: rotating 4s linear infinite;
-          animation: rotating 4s linear infinite;
+    -webkit-animation: rotating 4s linear infinite;
+    animation: rotating 4s linear infinite;
+}
+
+#installprompt {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+    z-index: 1;
+    font-style: normal;
+}
+
+#installprompt svg {
+    height: 40px;
+    width: 40px;
+}
+
+svg {
+    width: 25px;
+    margin-right: 20px;
+}
+
+path {
+    fill: #fff;
 }
