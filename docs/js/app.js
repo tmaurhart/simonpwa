@@ -31,11 +31,13 @@ items.forEach(function (item) {
                 console.log('CORRECT');
             } else {
                 console.log('INCORRECT pressed ' + clickedItem + ' expected ' + expectedItem);
+                document.getElementById('incorrect').style.display = 'block';
             }
             selectedIdx++;
             if (selectedIdx === selectedLevel.length) {
                 watchInput = false;
                 setLevel(levelIdx + 1);
+                document.getElementById('correct').style.display = 'block';
             }
         }
     });
@@ -62,7 +64,12 @@ function setLevel(level) {
 function start() {
     cancelNextItem();
     selectedIdx = -1;
+    setVisibility('correct', false);
     nextItem();
+}
+
+function setVisibility(id, visible) {
+    console.log(id);
 }
 
 function addClass(elem, cls) {
