@@ -1,26 +1,24 @@
 const swCache = 'simon-pwa-v1';
-self.addEventListener('install', function (e) {
-    e.waitUntil(
+self.addEventListener('install', (event) => {
+    event.waitUntil(
         caches.open(swCache)
-            .then(function (cache) {
-                return cache.addAll([
-                    '/',
-                    'index.html',
-                    'manifest.webmanifest',
-                    'css/style.css',
-                    'js/app.js',
-                    'icons/icon512.png',
-                    'icons/icon16.png',
-                    'icons/android-chrome-192x192.png',
-                    'icons/android-chrome-512x512.png',
-                    'icons/apple-touch-icon.png',
-                    'icons/favicon-16x16.png',
-                    'icons/favicon-32x32.png',
-                    'icons/favicon.ico',
-                    'icons/mstile-150x150.png',
-                    'icons/safari-pinned-tab.svg'
-                ]);
-            })
+            .then(cache => cache.addAll([
+                '/',
+                'index.html',
+                'css/styles.css',
+                'app.js',
+                'manifest.webmanifest',
+                'icons/icon512.png',
+                'icons/icon16.png',
+                'icons/android-chrome-192x192.png',
+                'icons/android-chrome-512x512.png',
+                'icons/apple-touch-icon.png',
+                'icons/favicon-16x16.png',
+                'icons/favicon-32x32.png',
+                'icons/favicon.ico',
+                'icons/mstile-150x150.png',
+                'icons/safari-pinned-tab.svg'
+            ]))
     );
 });
 
