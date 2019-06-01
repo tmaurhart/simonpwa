@@ -111,7 +111,7 @@ button#startGame:hover, button#startGame:focus, button#startGame:active {
 }
 
 #introduction {
-    font-size: 12px;
+    font-size: 14px;
     font-style: italic;
     text-align: center;
 }
@@ -137,6 +137,7 @@ button#startGame:hover, button#startGame:focus, button#startGame:active {
 }
 
 footer {
+    font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
