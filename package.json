@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/tmaurhart/simonpwa/issues"
   },
-  "homepage": "https://github.com/tmaurhart/simonpwa#readme"
+  "homepage": "https://github.com/tmaurhart/simonpwa#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.5"
+  }
 }
