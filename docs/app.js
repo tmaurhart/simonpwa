@@ -16,6 +16,7 @@
 
     if ('serviceWorker' in navigator &&
         (window.location.protocol === 'https:' || isLocalhost)) {
+        console.log('0');
         navigator.serviceWorker.register('/sw.js')
             .then(function (registration) {
                 // updatefound is fired if service-worker.js changes.
