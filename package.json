@@ -1,13 +1,13 @@
 {
   "name": "simon-pwa",
   "version": "1.0.0",
-  "description": "index.js",
+  "description": "",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "browser-sync start --server ./docs"
   },
   "repository": {
     "type": "git",
