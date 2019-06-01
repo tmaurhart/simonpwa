@@ -11,7 +11,7 @@ var selectedLevel = [];
 
 setLevel(0);
 
-// setup buttons
+// button setup
 var selectedIdx = -1;
 var tmr = null;
 var items = document.querySelectorAll('section button');
@@ -30,6 +30,88 @@ function setLevel(level) {
     document.getElementById('level').innerHTML = levelIdx;
 }
 
-document.querySelector('section button').addEventListener('click', () => {
-    console.log('test');
+function start() {
+ 
+}
+
+function addClass(elem, cls) {
+    if (typeof elem === 'string') {
+        console.log('addClass elem === string', elem);
+        elem = document.getElementById(elem);
+    }
+    var i;
+    var found = false;
+    console.log('addClass elem', elem);
+    var classes = elem.className.split(' ');
+    console.log(classes);
+    for (i = 0; i < classes.length; i++) {
+        if (classes[i] === cls) {
+            found = true;
+        }
+    }
+    if (!found) {
+        elem.className += ' ' + cls;
+        console.log(elem.className);
+    }
+}
+
+// button functions
+function cancelNextItem() {
+    if (tmr) {
+        window.cancelTimeout(tmr);
+    }
+}
+
+function clearItems() {
+    items.forEach(function (item) {
+        removeClass(item, 'flash');
+    });
+}
+
+function setItem(selectedIdx) {
+    addClass(items[selectedIdx], 'flash');
+}
+
+function nextItem() {
+    tmr = null;
+    var currentIdx = -1;
+    selectedIdx++;
+    if (selectedIdx < selectedLevel.length) {
+        // not finished pattern yet
+        currentIdx = selectedLevel[selectedIdx];
+    }
+    // clear current
+    if (selectedIdx > 0) {
+        clearItems();
+    }
+    // set next
+
+    if (selectedIdx > 0 && currentIdx > -1) {
+        // was previous and next
+        // allow a pause before next flash
+        window.setTimeout(function () {
+            postNext(currentIdx);
+        }, 150);
+    } else {
+        // no previous flash so just set next
+        postNext(currentIdx);
+    }
+}
+
+function postNext(currentIdx) {
+    if (currentIdx > -1) {
+        setItem(currentIdx);
+        tmr = window.setTimeout(nextItem, 800);
+    } else {
+        startWatching();
+    }
+}
+
+function startWatching() {
+    selectedIdx = 0;
+}
+
+document.getElementById('startGame').addEventListener('click', function () {
+    console.log('click start');
+    start();
 });
