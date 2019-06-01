@@ -1,0 +1,33 @@
+{
+    "name": "Simons Game",
+    "short_name": "Simon PWA",
+    "display": "standalone",
+    "start_url": ".",
+    "scope": "/simonpwa/",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "description": "Simons Game - Testdrive",
+    "icons": [
+        {
+            "src": "icons/icon512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon16.png",
+            "sizes": "16x16",
+            "type": "image/png",
+            "purpose": "badge"
+        },
+        {
+            "src": "icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

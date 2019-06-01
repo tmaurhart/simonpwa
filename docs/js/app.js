@@ -65,11 +65,13 @@ function start() {
     cancelNextItem();
     selectedIdx = -1;
     setVisibility('correct', false);
+    setVisibility('incorrect', false);
     nextItem();
 }
 
 function setVisibility(id, visible) {
-    console.log(id);
+    document.getElementById(id).style.display = visible ? 'block' : 'none';
+    //console.log(id);
 }
 
 function addClass(elem, cls) {
