@@ -25,7 +25,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.open(swCache)
-            .then(cache => cache.match(event.request))
+            .then(cache => cache.match(event.request.url))
     );
 });
 
