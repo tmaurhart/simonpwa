@@ -9,10 +9,10 @@
     var loader = document.getElementById('loader');
     setTimeout(function () {
         loader.firstChild.classList.add('rotating');
-    }, 700);
+    }, 1000);
     setTimeout(function () {
         loader.classList.add('is-hidden');
-    }, 1400);
+    }, 2000);
     setTimeout(function () {
         loader.remove();
     }, 3400);
@@ -91,8 +91,8 @@
         console.log(level);
         var arr = [];
         if (level == 0) {
-            //levels[level] = arr.push(Math.floor(Math.random()*4));
-            console.log("arr = " + arr[0]);
+            levels[level] = arr.push(Math.floor(Math.random()*4));
+            //console.log("arr = " + arr[0]);
         } else {
             arr = levels[level - 1];
             arr.push(Math.floor(Math.random() * 4));

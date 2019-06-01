@@ -1,8 +1,8 @@
 {
   "name": "simon-pwa",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Simon Says",
+  "main": "index.html",
   "directories": {
     "doc": "docs"
   },
