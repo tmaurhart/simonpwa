@@ -16,7 +16,7 @@
 
     if ('serviceWorker' in navigator &&
         (window.location.protocol === 'https:' || isLocalhost)) {
-        console.log('0');
+        console.log('00');
         navigator.serviceWorker.register('simonpwa/sw.js')
             .then(function (registration) {
                 // updatefound is fired if service-worker.js changes.
@@ -54,8 +54,11 @@
                                 // Ignore
                             }
                         };
+                        console.log('before end');
                     }
+
                 };
+                console.log('end');
             }).catch(function (e) {
                 console.error('Error during service worker registration:', e);
             });
