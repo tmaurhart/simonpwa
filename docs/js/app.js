@@ -17,6 +17,30 @@ var tmr = null;
 var items = document.querySelectorAll('.btnClick');
 console.log('items', items.length);
 
+//  wire up buttons
+var watchInput = false;
+items.forEach(function (item) {
+    item.addEventListener('click', function () {
+        if (watchInput) {
+            flashItem(item);
+            var clickedItem = parseInt(item.id.split('-')[1], 10);
+            console.log(clickedItem);
+            var expectedItem = selectedLevel[selectedIdx];
+            // check input
+            if (clickedItem === expectedItem) {
+                console.log('CORRECT');
+            } else {
+                console.log('INCORRECT pressed ' + clickedItem + ' expected ' + expectedItem);
+            }
+            selectedIdx++;
+            if (selectedIdx === selectedLevel.length) {
+                watchInput = false;
+                setLevel(levelIdx + 1);
+            }
+        }
+    });
+});
+
 document.getElementById('startGame').addEventListener('click', function () {
     console.log('click start');
     start();
@@ -131,4 +155,5 @@ function postNext(currentIdx) {
 
 function startWatching() {
     selectedIdx = 0;
+    watchInput = true;
 }
