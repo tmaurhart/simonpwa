@@ -18,7 +18,21 @@ self.addEventListener('install', (event) => {
                 'icons/favicon-32x32.png',
                 'icons/favicon.ico',
                 'icons/mstile-150x150.png',
-                'icons/safari-pinned-tab.svg'
+                'icons/safari-pinned-tab.svg',
+                'fonts/josefin-sans-v13-latin-italic.svg',
+                'fonts/josefin-sans-v13-latin-italic.ttf',
+                'fonts/josefin-sans-v13-latin-italic.woff',
+                'fonts/josefin-sans-v13-latin-italic.woff2',
+                'fonts/josefin-sans-v13-latin-regular.eot',
+                'fonts/josefin-sans-v13-latin-regular.svg',
+                'fonts/josefin-sans-v13-latin-regular.ttf',
+                'fonts/josefin-sans-v13-latin-regular.woff',
+                'fonts/josefin-sans-v13-latin-regular.woff2',
+                'fonts/press-start-2p-v7-latin-regular.eot',
+                'fonts/press-start-2p-v7-latin-regular.svg',
+                'fonts/press-start-2p-v7-latin-regular.ttf',
+                'fonts/press-start-2p-v7-latin-regular.woff',
+                'fonts/press-start-2p-v7-latin-regular.woff2'
             ]))
     );
 });

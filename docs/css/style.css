@@ -41,6 +41,8 @@ section {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 10px 0px rgba(255,255,255,0.9);
+    border-radius: 100%;
 }
 
 section button { 
@@ -51,7 +53,7 @@ section button {
 }
 
 section button.btnYellow {
-    background: rgba(255,255,0, 0.7);
+    background: rgba(255,255,0, 0.8);
     border-radius: 100% 0 0 0;
 }
 
@@ -60,7 +62,7 @@ section button.btnYellow.flash {
 }
 
 section button.btnRed {
-    background: rgba(255,0,0,0.7);
+    background: rgba(255,0,0,0.8);
     border-radius: 0 100% 0 0;
 }
 
@@ -69,7 +71,7 @@ section button.btnRed.flash {
 }
 
 section button.btnGreen {
-    background: rgba(0,128,0,0.7);
+    background: rgba(0,128,0,0.8);
     border-radius: 0 0 100% 0;
 }
 
@@ -78,7 +80,7 @@ section button.btnGreen.flash {
 }
 
 section button.btnBlue {
-    background: rgba(0,0,255,0.7);
+    background: rgba(0,0,255,0.8);
     border-radius: 0 0 0 100%;
 }
 
