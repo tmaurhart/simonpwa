@@ -11,11 +11,16 @@ var selectedLevel = [];
 
 setLevel(0);
 
-// button setup
+// setup buttons
 var selectedIdx = -1;
 var tmr = null;
-var items = document.querySelectorAll('section button');
+var items = document.querySelectorAll('.btnClick');
 console.log('items', items.length);
+
+document.getElementById('startGame').addEventListener('click', function () {
+    console.log('click start');
+    start();
+});
 
 function flashItem(item) {
     addClass(item, 'flash');
@@ -31,8 +36,9 @@ function setLevel(level) {
 }
 
 function start() {
-    nextItem();
     cancelNextItem();
+    selectedIdx = -1;
+    nextItem();
 }
 
 function addClass(elem, cls) {
@@ -126,8 +132,3 @@ function postNext(currentIdx) {
 function startWatching() {
     selectedIdx = 0;
 }
-
-document.getElementById('startGame').addEventListener('click', function () {
-    console.log('click start');
-    start();
-});
