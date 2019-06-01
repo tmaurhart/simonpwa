@@ -5,7 +5,7 @@
 
 body {
     font-family: Verdana, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     color: #FFF;
     background: #000;
 }
@@ -24,7 +24,7 @@ main {
 }
 
 h1 {
-    margin: 0 0 15px 0;
+    margin: 0 0 30px 0;
     text-align: center;
 }
 
@@ -36,9 +36,11 @@ section {
 }
 
 section button { 
-    flex: 1 1 50%;
+    flex: 1 1 49%;
     height: 100px;
     border: 5px solid #FFF;
+    box-shadow: 0px 0px 3px 0px rgb(255, 255, 255, 1);
+    margin: .5%;
 }
 
 section button.btnYellow {
@@ -77,7 +79,7 @@ section button.btnBlue.flash {
     background: rgba(0,0,255,1);
 }
 
-button#startGame {
+button#startGame1 {
     width: 150px;
     padding: 15px 0;
     margin-top: 20px;
@@ -86,10 +88,36 @@ button#startGame {
     text-transform: uppercase;
     border-radius: 100%;
     border: 0;
+    cursor: pointer;
 }
 
-#level {
+button#startGame {
+    margin-top: 30px;
+    transition: all 0.5s cubic-bezier(0.65, -0.25, 0.25, 1.95);
+    font-weight: bold;
+    color: #FFF;
+    padding: .75rem 2rem;
+    background: #9a0000;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0px rgba(255,255,255,0.8);
+}
+
+button#startGame:hover, button#startGame:focus, button#startGame:active {
+    letter-spacing: 0.125rem;
+}
+
+
+#gameLevel, #introduction {
     margin: 20px 0 0 0;
+}
+
+#introduction {
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
 }
 
 .alert {

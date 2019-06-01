@@ -14,9 +14,9 @@
     <main id="simon-game">
         <h1>Simons Game</h1>
 
-        <section>
-            <div class="alert" id="correct">Richtig</div>
-            <div class="alert" id="incorrect">Falsch</div>
+        <section id="gameBoard">
+            <div class="alert" id="correct">Perfect!</div>
+            <div class="alert" id="incorrect">Wrong!</div>
             <button id="button-0" class="btnClick btnYellow">1</button>
             <button id="button-1" class="btnClick btnRed">2</button>
             <button id="button-2" class="btnClick btnBlue">3</button>
@@ -26,7 +26,14 @@
         <button id="startGame">Start</button>
 
     
-        <div id="level"></div>
+        <div id="gameLevel">
+            Level <span id="level"></span>
+        </div>
+
+        <div id="introduction">
+            Click the "Start" button then watch the pattern of the flashing panels.<br>
+            Press the panels in the same order you saw them flash.
+        </div>
 
     </main>
 
