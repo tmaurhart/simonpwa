@@ -54,11 +54,8 @@
                                 // Ignore
                             }
                         };
-                        console.log('before end');
                     }
-
                 };
-                console.log('end');
             }).catch(function (e) {
                 console.error('Error during service worker registration:', e);
             });
