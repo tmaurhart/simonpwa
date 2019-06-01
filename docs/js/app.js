@@ -31,19 +31,20 @@ function setLevel(level) {
 }
 
 function start() {
- 
+    nextItem();
+    cancelNextItem();
 }
 
 function addClass(elem, cls) {
     if (typeof elem === 'string') {
-        console.log('addClass elem === string', elem);
+        //console.log('addClass elem === string', elem);
         elem = document.getElementById(elem);
     }
     var i;
     var found = false;
-    console.log('addClass elem', elem);
+    //console.log('addClass elem', elem);
     var classes = elem.className.split(' ');
-    console.log(classes);
+    //console.log(classes);
     for (i = 0; i < classes.length; i++) {
         if (classes[i] === cls) {
             found = true;
@@ -51,8 +52,23 @@ function addClass(elem, cls) {
     }
     if (!found) {
         elem.className += ' ' + cls;
-        console.log(elem.className);
+        //console.log(elem.className);
     }
+}
+
+function removeClass(elem, remove) {
+    if (typeof elem === 'string') {
+        elem = document.getElementById(elem);
+    }
+    var newClassName = '';
+    var i;
+    var classes = elem.className.split(' ');
+    for (i = 0; i < classes.length; i++) {
+        if (classes[i] !== remove) {
+            newClassName += classes[i] + ' ';
+        }
+    }
+    elem.className = newClassName;
 }
 
 // button functions
