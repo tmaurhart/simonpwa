@@ -1,0 +1,22 @@
+{
+  "name": "simon-pwa",
+  "version": "1.0.0",
+  "description": "index.js",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmaurhart/simonpwa.git"
+  },
+  "author": "Thomas Maurhart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmaurhart/simonpwa/issues"
+  },
+  "homepage": "https://github.com/tmaurhart/simonpwa#readme"
+}
