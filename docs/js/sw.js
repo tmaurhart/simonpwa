@@ -1,29 +1,49 @@
-self.addEventListener('install', (event) => {
-    event.waitUntil(
-        caches.open('simonsays-v1')
-            .then(cache => cache.addAll([
-                '/',
-                'index.html',
-                'manifest.webmanifest',
-                'css/style.css',
-                'js/app.js',
-                'icons/icon512.png',
-                'icons/icon16.png',
-                'icons/android-chrome-192x192.png',
-                'icons/android-chrome-512x512.png',
-                'icons/apple-touch-icon.png',
-                'icons/favicon-16x16.png',
-                'icons/favicon-32x32.png',
-                'icons/favicon.ico',
-                'icons/mstile-150x150.png',
-                'icons/safari-pinned-tab.svg'
-            ]))
+const swCache = 'simon-pwa-v1';
+self.addEventListener('install', function (e) {
+    e.waitUntil(
+        caches.open(swCache)
+            .then(function (cache) {
+                return cache.addAll([
+                    '/',
+                    'index.html',
+                    'manifest.webmanifest',
+                    'css/style.css',
+                    'js/app.js',
+                    'icons/icon512.png',
+                    'icons/icon16.png',
+                    'icons/android-chrome-192x192.png',
+                    'icons/android-chrome-512x512.png',
+                    'icons/apple-touch-icon.png',
+                    'icons/favicon-16x16.png',
+                    'icons/favicon-32x32.png',
+                    'icons/favicon.ico',
+                    'icons/mstile-150x150.png',
+                    'icons/safari-pinned-tab.svg'
+                ]);
+            })
     );
 });
 
-self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.open('simonsays-v1')
-            .then(cache => cache.match(event.request))
+self.addEventListener('activate', function (e) {
+    console.log('[ServiceWorker] Activate');
+    e.waitUntil(
+        caches.keys().then(function (keyList) {
+            return Promise.all(keyList.map(function (key) {
+                if (key !== swCache) {
+                    console.log('[ServiceWorker] Removing old cache', key);
+                    return caches.delete(key);
+                }
+            }));
+        })
+    );
+    return self.clients.claim();
+});
+
+
+self.addEventListener('fetch', function (e) {
+    e.respondWith(
+        caches.match(e.request).then(function (response) {
+            return response || fetch(e.request);
+        })
     );
 });
