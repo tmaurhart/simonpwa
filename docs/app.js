@@ -77,6 +77,7 @@
                 } else {
                     console.log('INCORRECT pressed ' + clickedItem + ' expected ' + expectedItem);
                     setVisibility('incorrect', true);
+                    selectedIdx = -1;
                     removeClass('startGame', 'readonly');
                 }
                 selectedIdx++;
