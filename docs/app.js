@@ -49,7 +49,7 @@
     var selectedIdx = -1;
     var tmr = null;
     var items = document.querySelectorAll('.btnClick');
-    console.log('items', items.length);
+    console.log('items 1', items.length);
 
     //  wire up buttons
     var watchInput = false;
