@@ -9,15 +9,11 @@
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
             .register('sw.js')
-            .then(function () { console.log("Service Worker Registered"); })
-            .catch(function (error) {
-                // Registrierung fehlgeschlagen
-                console.log('Registrierung fehlgeschlagen mit ' + error);
-            });
+            .then(function () { console.log("Service Worker Registered"); });
     }
 
     /*if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js', { scope: '/' }).then(function (reg) {
+        navigator.serviceWorker.register('sw.js', { scope: '/simon-pwa/' }).then(function (reg) {
             // Registrierung erfolgreich
             console.log('Registrierung erfolgreich. Scope ist ' + reg.scope);
         }).catch(function (error) {
@@ -63,7 +59,7 @@
     var selectedIdx = -1;
     var tmr = null;
     var items = document.querySelectorAll('.btnClick');
-    console.log('items 3', items.length);
+    console.log('items 1', items.length);
 
     //  wire up buttons
     var watchInput = false;
