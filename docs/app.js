@@ -6,13 +6,17 @@
             .catch(console.error);
     }*/
 
-    /*if ('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator) {
         navigator.serviceWorker
             .register('sw.js')
-            .then(function () { console.log("Service Worker Registered"); });
-    }*/
+            .then(function () { console.log("Service Worker Registered"); })
+            .catch(function (error) {
+                // Registrierung fehlgeschlagen
+                console.log('Registrierung fehlgeschlagen mit ' + error);
+            });
+    }
 
-    if ('serviceWorker' in navigator) {
+    /*if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js', { scope: '/' }).then(function (reg) {
             // Registrierung erfolgreich
             console.log('Registrierung erfolgreich. Scope ist ' + reg.scope);
@@ -20,7 +24,7 @@
             // Registrierung fehlgeschlagen
             console.log('Registrierung fehlgeschlagen mit ' + error);
         });
-    };
+    };*/
     
     var loader = document.getElementById('loader');
     setTimeout(function () {
