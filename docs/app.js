@@ -125,6 +125,7 @@
         levelIdx = 0;
         selectedLevel = [];
         setLevel(0);
+        console.log('reset' + levelIdx)
     }
 
     function setVisibility(id, visible) {
