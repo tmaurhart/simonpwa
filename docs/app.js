@@ -1,27 +1,12 @@
 (function () {
     'use strict';
     
-    /*if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js')
-            .catch(console.error);
-    }*/
-
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
             .register('sw.js')
             .then(function () { console.log("Service Worker Registered"); });
     }
 
-    /*if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js', { scope: '/simon-pwa/' }).then(function (reg) {
-            // Registrierung erfolgreich
-            console.log('Registrierung erfolgreich. Scope ist ' + reg.scope);
-        }).catch(function (error) {
-            // Registrierung fehlgeschlagen
-            console.log('Registrierung fehlgeschlagen mit ' + error);
-        });
-    };*/
-    
     var loader = document.getElementById('loader');
     setTimeout(function () {
         loader.firstChild.classList.add('rotating');
@@ -36,6 +21,8 @@
     var d = new Date();
     var n = d.getFullYear();
     document.getElementById('footerYear').innerHTML = n;
+
+    var sounds = [new Audio('audio/simonSound1.mp3'), new Audio('audio/simonSound2.mp3'), new Audio('audio/simonSound3.mp3'), new Audio('audio/simonSound4.mp3')];
 
     // setup levels
     /*var levels = [
@@ -53,13 +40,11 @@
 
     setLevel(0);
 
-    var sounds = [new Audio('audio/simonSound1.mp3'), new Audio('audio/simonSound2.mp3'), new Audio('audio/simonSound3.mp3'), new Audio('audio/simonSound4.mp3')];
-
     // setup buttons
     var selectedIdx = -1;
     var tmr = null;
     var items = document.querySelectorAll('.btnClick');
-    console.log('items 1', items.length);
+    console.log('items', items.length);
 
     //  wire up buttons
     var watchInput = false;
@@ -132,6 +117,14 @@
         setVisibility('incorrect', false);
         addClass('startGame', 'readonly');
         nextItem();
+    }
+
+    function reset() {
+        lvl = [Math.floor(Math.random() * 4)];
+        levels = [lvl];
+        levelIdx = 0;
+        selectedLevel = [];
+        setLevel(0);
     }
 
     function setVisibility(id, visible) {

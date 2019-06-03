@@ -113,7 +113,7 @@ section .gameLevel {
     background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
-button#startGame {
+button#startGame, button#resetGame {
     font-family: 'Press Start 2P', 'Gill Sans', 'Gill Sans MT', cursive;
     font-size: 12px;
     margin-top: 30px;
@@ -129,7 +129,12 @@ button#startGame {
     background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 }
 
-button#startGame:hover, button#startGame:focus, button#startGame:active {
+button#resetGame {
+    background-image: linear-gradient(to top, #FE0111 0%, #ffa4a9 100%);
+}
+
+button#startGame:hover, button#startGame:focus, button#startGame:active,
+button#resetGame:hover, button#resetGame:focus, button#resetGame:active {
     letter-spacing: 0.125rem;
 }
 
