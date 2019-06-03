@@ -53,12 +53,13 @@ section button {
 }
 
 section button.btnYellow {
-    background: rgba(255,255,0, 0.8);
+    background: #F1C200;
     border-radius: 100% 0 0 0;
 }
 
 section button.btnYellow.flash {
-    background: rgba(255,255,0, 1);
+    background: #ffeda5;
+    box-shadow: 0 0 20px #F1C200
 }
 
 section button.btnRed {
