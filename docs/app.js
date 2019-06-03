@@ -84,6 +84,11 @@
         start();
     });
 
+    document.getElementById('resetGame').addEventListener('click', function () {
+        console.log('click reset');
+        reset();
+    });
+
     function flashItem(item) {
         addClass(item, 'flash');
         setTimeout(function () {
@@ -116,6 +121,7 @@
         setVisibility('correct', false);
         setVisibility('incorrect', false);
         addClass('startGame', 'readonly');
+        removeClass('resetGame', 'readonly');
         nextItem();
     }
 
@@ -125,7 +131,9 @@
         levelIdx = 0;
         selectedLevel = [];
         setLevel(0);
-        console.log('reset' + levelIdx)
+        removeClass('startGame', 'readonly');
+        addClass('resetGame', 'readonly');
+        //console.log('reset' + levelIdx)
     }
 
     function setVisibility(id, visible) {
