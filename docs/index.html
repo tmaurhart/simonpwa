@@ -31,9 +31,11 @@
             </svg>
         </a>
     </div>
-    <main id="simon-game">
+    <header>
         <h1>Simons Says</h1>
-
+    </header>
+    <main id="simon-game">
+        
         <section id="gameBoard">
             <div class="gameLevel"><span id="level"></span></div>
             <div class="alert" id="correct">Perfect, next round!</div>
@@ -44,13 +46,15 @@
             <button id="button-3" class="btnClick btnGreen"></button>
         </section>
 
-        <button id="startGame">Start Game</button>
-        <button id="resetGame">Reset</button>
+        <section>
+            <button id="startGame">Start Game</button>
+            <button id="resetGame">Reset</button>
 
-        <div id="introduction">
-            Click the "Start Game" button then watch the pattern of the flashing panels.<br>
-            Press the panels in the same order you saw them flash.
-        </div>
+            <div id="introduction">
+                Click the "Start Game" button then watch the pattern of the flashing panels.<br>
+                Press the panels in the same order you saw them flash.
+            </div>
+        </section>
 
     </main>
     <footer>&copy; <span id="footerYear"></span> by Thomas Maurhart</footer>

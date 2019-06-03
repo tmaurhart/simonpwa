@@ -18,10 +18,10 @@ body {
     font-family: 'Josefin Sans', 'Verdana', sans-serif;
     font-size: 16px;
     color: #fff;
+    padding: 20px;
 }
 
 main {
-    height: 85vh;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
@@ -30,7 +30,7 @@ main {
     align-items: center;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 25px 20px;
+    padding: 20px;
 }
 
 h1 {
@@ -38,11 +38,14 @@ h1 {
     font-size: 24px;
     color: #00adef;
     text-transform: uppercase;
-    margin: 0 0 30px 0;
     text-align: center;
 }
 
 section {
+    width: 98%;
+}
+
+section#gameBoard {
     width: 200px;
     display: flex;
     flex-wrap: wrap;
@@ -52,54 +55,54 @@ section {
     border-radius: 100%;
 }
 
-section button { 
+section#gameBoard button { 
     flex: 1 1 50%;
     height: 100px;
     border: 5px solid #1D1F20;
     box-shadow: 0px 0px 3px 0px rgb(0,0,0,0.8);
 }
 
-section button.btnYellow {
+section#gameBoard button.btnYellow {
     background: #F1C200;
     border-radius: 100% 0 0 0;
 }
 
-section button.btnYellow.flash {
+section#gameBoard button.btnYellow.flash {
     background: #ffeda5;
     box-shadow: 0 0 20px #F1C200
 }
 
-section button.btnRed {
+section#gameBoard button.btnRed {
     background: #FE0111;
     border-radius: 0 100% 0 0;
 }
 
-section button.btnRed.flash {
+section#gameBoard button.btnRed.flash {
     background: #ffa4a9;
     box-shadow: 0 0 20px #FE0111;
 }
 
-section button.btnGreen {
+section#gameBoard button.btnGreen {
     background: #00911C;
     border-radius: 0 0 100% 0;
 }
 
-section button.btnGreen.flash {
+section#gameBoard button.btnGreen.flash {
     background: #35ff5c;
     box-shadow: 0 0 20px #00911C;
 }
 
-section button.btnBlue {
+section#gameBoard button.btnBlue {
     background: #0065CA;
     border-radius: 0 0 0 100%;
 }
 
-section button.btnBlue.flash {
+section#gameBoard button.btnBlue.flash {
     background: #7ebeff;
     box-shadow: 0 0 20px #0065CA;
 }
 
-section .gameLevel {
+section#gameBoard .gameLevel {
     font-weight: bold;
     color: #1D1F20;
     width: 60px;
@@ -117,7 +120,7 @@ section .gameLevel {
 button#startGame, button#resetGame {
     font-family: 'Press Start 2P', 'Gill Sans', 'Gill Sans MT', cursive;
     font-size: 12px;
-    margin-top: 30px;
+    margin: 30px auto 0;
     transition: all 0.5s cubic-bezier(0.65, -0.25, 0.25, 1.95);
     font-weight: bold;
     color: #FFF;
@@ -128,6 +131,7 @@ button#startGame, button#resetGame {
     border-radius: 4px;
     box-shadow: 0 0 8px 0px rgba(255,255,255,0.8);
     background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    display: block;
 }
 
 button#resetGame {
@@ -273,4 +277,10 @@ svg {
 
 path {
     fill: #fff;
+}
+
+@media screen and (min-width: 320px) and (orientation: landscape) {
+    main {
+        flex-wrap: wrap;
+    }
 }
