@@ -158,6 +158,7 @@ button.readonly {
 
 .alert {
     font-family: 'Press Start 2P', 'Gill Sans', 'Gill Sans MT', cursive;
+    font-size: 14px;
     max-width: 250px;
     width: 100%;
     position: absolute;
