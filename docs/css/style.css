@@ -30,7 +30,7 @@ main {
     align-items: center;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 20px;
+    padding: 25px 20px;
 }
 
 h1 {
