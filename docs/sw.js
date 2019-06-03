@@ -4,7 +4,7 @@ self.addEventListener('install', function (e) {
         caches.open(swCache)
             .then(function (cache) {
                 return cache.addAll([
-                    '/',
+                    '/simonpwa/',
                     'index.html',                    
                     'app.js',
                     'manifest.webmanifest',
@@ -58,11 +58,17 @@ self.addEventListener('activate', function (e) {
     return self.clients.claim();
 });
 
-
-self.addEventListener('fetch', function (e) {
+/*self.addEventListener('fetch', function (e) {
     e.respondWith(
         caches.match(e.request).then(function (response) {
             return response || fetch(e.request);
         })
+    );
+});*/
+
+self.addEventListener('fetch', (event) => {
+    event.respondWith(
+        caches.open(swCache)
+            .then(cache => cache.match(event.request.url))
     );
 });
