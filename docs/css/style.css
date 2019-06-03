@@ -132,6 +132,7 @@ button#startGame, button#resetGame {
 
 button#resetGame {
     background-image: linear-gradient(to top, #FE0111 0%, #ffa4a9 100%);
+    margin-top: 15px;
 }
 
 button#startGame:hover, button#startGame:focus, button#startGame:active,

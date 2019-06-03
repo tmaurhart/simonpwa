@@ -5,8 +5,8 @@
     "scope": "/simonpwa/",
     "start_url": "/simonpwa/",
     "orientation": "portrait",
-    "background_color": "#000000",
-    "theme_color": "#000000",
+    "background_color": "#2b3e51",
+    "theme_color": "#2b3e51",
     "description": "Simons Says - Testdrive",
     "icons": [
         {
