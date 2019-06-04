@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:host {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+html {
+}
+
+body {
+    font-family: 'Josefin Sans', 'Verdana', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px;
+    background: #2c3e50;
+    background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);
+    background: linear-gradient(to bottom, #2c3e50, #bdc3c7);
+    height: 100vh;
+}
+
+main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Press Start 2P', 'Gill Sans', 'Gill Sans MT', cursive;
+    font-size: 24px;
+    color: #00adef;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+section {
+    width: 98%;
+}
+
+section#gameBoard {
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px 0px rgba(0,0,0,0.8);
+    border-radius: 100%;
+}
+
+section#gameBoard button { 
+    flex: 1 1 50%;
+    height: 100px;
+    border: 5px solid #1D1F20;
+    box-shadow: 0px 0px 3px 0px rgb(0,0,0,0.8);
+}
+
+section#gameBoard button.btnYellow {
+    background: #F1C200;
+    border-radius: 100% 0 0 0;
+}
+
+section#gameBoard button.btnYellow.flash {
+    background: #ffeda5;
+    box-shadow: 0 0 20px #F1C200
+}
+
+section#gameBoard button.btnRed {
+    background: #FE0111;
+    border-radius: 0 100% 0 0;
+}
+
+section#gameBoard button.btnRed.flash {
+    background: #ffa4a9;
+    box-shadow: 0 0 20px #FE0111;
+}
+
+section#gameBoard button.btnGreen {
+    background: #00911C;
+    border-radius: 0 0 100% 0;
+}
+
+section#gameBoard button.btnGreen.flash {
+    background: #35ff5c;
+    box-shadow: 0 0 20px #00911C;
+}
+
+section#gameBoard button.btnBlue {
+    background: #0065CA;
+    border-radius: 0 0 0 100%;
+}
+
+section#gameBoard button.btnBlue.flash {
+    background: #7ebeff;
+    box-shadow: 0 0 20px #0065CA;
+}
+
+section#gameBoard .gameLevel {
+    font-weight: bold;
+    color: #1D1F20;
+    width: 60px;
+    height: 60px;
+    border: 8px solid #1D1F20;
+    border-radius: 100%;
+    position: absolute;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+button#startGame, button#resetGame {
+    font-family: 'Press Start 2P', 'Gill Sans', 'Gill Sans MT', cursive;
+    font-size: 12px;
+    margin: 30px auto 0;
+    transition: all 0.5s cubic-bezier(0.65, -0.25, 0.25, 1.95);
+    font-weight: bold;
+    color: #FFF;
+    padding: .75rem 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0px rgba(255,255,255,0.8);
+    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    display: block;
+}
+
+button#resetGame {
+    background-image: linear-gradient(to top, #FE0111 0%, #ffa4a9 100%);
+    margin-top: 15px;
+}
+
+button#startGame:hover, button#startGame:focus, button#startGame:active,
+button#resetGame:hover, button#resetGame:focus, button#resetGame:active {
+    letter-spacing: 0.125rem;
+}
+
+button.readonly {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+#introduction {    
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+.alert {
+    font-family: 'Press Start 2P', 'Gill Sans', 'Gill Sans MT', cursive;
+    font-size: 14px;
+    max-width: 250px;
+    width: 100%;
+    position: absolute;
+    padding: 10px;
+    border: 3px solid #FFF;
+    display: none;
+    transform: rotate(5deg);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#correct {
+    background: green;
+    transform: rotate(-5deg);
+    background-image: radial-gradient( circle 642px at 47.1% 118.5%,  rgba(0,107,60,1) 0%, rgba(59,183,115,1) 100.2% );
+}
+
+#incorrect {
+    background: red;
+    background-image: radial-gradient( circle farthest-corner at 51% 51.5%, rgba(237,69,69,0.91) 0.1%, rgb(170, 20, 20) 90% )
+}
+
+footer {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+footer #footerYear {
+    padding: 0 5px;
+}
+
+#loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    transition: all 2000ms ease-in-out;
+    opacity: 1;
+    background: linear-gradient(to right, #fff, #e2e2e2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loader.is-hidden {
+    opacity: 0;
+}
+
+#loader img {
+    transition: -webkit-transform 0.8s ease-in-out;
+    transition: transform 0.8s ease-in-out;
+    transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    opacity: 1;
+}
+
+@-webkit-keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+       transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 4s linear infinite;
+    animation: rotating 4s linear infinite;
+}
+
+#installprompt {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+    z-index: 1;
+    font-style: normal;
+}
+
+#installprompt svg {
+    height: 40px;
+    width: 40px;
+}
+
+svg {
+    width: 25px;
+    margin-right: 20px;
+}
+
+path {
+    fill: #fff;
+}
+
+@media screen and (min-width: 320px) and (orientation: landscape) {
+
+}

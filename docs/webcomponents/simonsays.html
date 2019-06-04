@@ -1,0 +1,65 @@
+<template>
+    <style>
+    	@import url('font.css');
+        @import url('simongame.css');  
+    </style>
+
+	<body>
+		<div id="loader"><img src="icons/android-chrome-192x192.png" alt=""></div>
+		<div id="installprompt">
+			<a href="#" class="addtohome">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+					<title>Add to Home Screen</title>
+					<path d="M420.572 256h-68.572l-96 96-96-96h-68.573l-54.857 109.714v27.428h438.857v-27.428l-54.857-109.714zM36.572 420.572h438.857v27.428h-438.857v-27.428zM283.428 173.712v-109.712h-54.857v109.712h-96l123.427 123.43 123.43-123.43h-96z"></path>
+				</svg>
+			</a>
+		</div>
+
+		<header>
+			<h1>Simons Says</h1>
+		</header>
+		<main id="simon-game">
+		
+			<section id="gameBoard">
+				<div class="gameLevel"><span id="level"></span></div>
+				<div class="alert" id="correct">Perfect, next round!</div>
+				<div class="alert" id="incorrect">Congratulations you did <span id="levelIfo"></span> turns!</div>
+				<button id="button-0" class="btnClick btnYellow"></button>
+				<button id="button-1" class="btnClick btnRed"></button>
+				<button id="button-2" class="btnClick btnBlue"></button>
+				<button id="button-3" class="btnClick btnGreen"></button>
+			</section>
+
+			<section>
+				<button id="startGame">Start Game</button>
+				<button id="resetGame" class="readonly">Reset</button>
+
+				<div id="introduction">
+					Click the "Start Game" button then watch the pattern of the flashing panels.<br>
+					Press the panels in the same order you saw them flash.
+				</div>
+			</section>
+
+		</main>
+		<footer>&copy; <span id="footerYear"></span> by Thomas Maurhart</footer>
+	</body>
+
+</template>
+<script>
+(function(){
+    var thisDoc = document.currentScript.ownerDocument;
+    var thatDoc = document;
+
+    var template = thisDoc.querySelector('template');
+    var Element = Object.create(HTMLElement.prototype);
+    var shadowRoot;
+
+    Element.createdCallback = function() {
+        shadowRoot = this.createShadowRoot();
+        var clone = thatDoc.importNode(template.content, true);
+        shadowRoot.appendChild(clone);
+    }
+
+    thatDoc.registerElement('simongame', {prototype:Element});
+})()
+</script>
