@@ -19,8 +19,10 @@
     "url": "https://github.com/tmaurhart/simonpwa/issues"
   },
   "homepage": "https://github.com/tmaurhart/simonpwa#readme",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.14"
+  },
   "devDependencies": {
-    "browser-sync": "^2.26.5"
+    "browser-sync": "^2.26.7"
   }
 }
