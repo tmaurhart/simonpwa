@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/tmaurhart/simonpwa#readme",
   "dependencies": {
-    "lodash": "^4.17.14"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7"
