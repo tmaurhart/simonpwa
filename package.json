@@ -23,6 +23,6 @@
     "lodash": "^4.17.14"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7"
+    "browser-sync": "^2.27.10"
   }
 }
